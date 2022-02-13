@@ -53,6 +53,7 @@ public class SampleDAOSpring implements SampleDAO{
 		spring.update(SAMPLE_DELETE,vo.getId());
 	}
 	
+	@SuppressWarnings("deprecation")
 	public List<SampleVO> selectSampleList(SampleVO vo) throws Exception{
 		System.out.println("selectSampleList 생성");
 		Object[] args= {vo.getId()};
@@ -62,7 +63,7 @@ public class SampleDAOSpring implements SampleDAO{
 	
 	public SampleVO selectSample(SampleVO vo) throws Exception{	
 		System.out.println("selectSample 생성");
-		return spring.queryForObject(SAMPLE_LIST,new SampleRowMapper());
+		return spring.queryForObject(SAMPLE_GET,new SampleRowMapper());
 		
 	}
 
