@@ -12,13 +12,8 @@ import egoveframework.sample.service.SampleVO;
 @Service("sampleService")
 public class SampleServiceImpl implements SampleService {
 	
-	@Resource(name="daoJDBC")
-	private SampleDAO sampleDAO;
-	
 	@Resource(name="daoSpring")
-	private SampleDAO springDAO;
-	
-	
+	private SampleDAO sampleDAO;
 	
 	@Override
 	public void insertSample(SampleVO vo) throws Exception {

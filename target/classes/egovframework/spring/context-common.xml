@@ -21,10 +21,10 @@
 			<value>서울시강남구역삼동</value>
 		</list>
 	</property>
+	</bean>
 	
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.jdbcTemplate">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-</bean>
 
 </beans>
