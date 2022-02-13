@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context						
+						http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+
+	<context:component-scan base-package="egoveframework">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+	<bean id="collectionBean" class="egoveframework.sample.service.impl.CollectionBean">
+	<property name="addressList">
+		<list>
+			<value>서울시강남구역삼동</value>
+			<value>서울시강남구역삼동</value>
+		</list>
+	</property>
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.jdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+</bean>
+
+</beans>

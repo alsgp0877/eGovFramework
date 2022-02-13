@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d %5p [%c] %m%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="java.sql" level="INFO" additivity="false">
+			<AppenderRef ref="console"></AppenderRef>
+		</Logger>
+		<Logger name="java.sql" level="DEBUG" additivity="false">
+			<AppenderRef ref="console"></AppenderRef>
+		</Logger>
+		<Root level="INFO">
+			<AppenderRef ref="console"></AppenderRef>
+		</Root>
+	</Loggers>
+</Configuration>
