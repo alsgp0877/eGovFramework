@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/aop						
+						http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+	<!-- aop거는순간 client.class에서 에러떠서 왜그러는지 봐야함 ㅠㅠ -->
+	<!-- 횡단관심에 해당하는 ADVICE 등록 -->
+	<!-- <bean id="advice" class="egoveframework.sample.service.common.AdvancedSampleAdvice"></bean>
+	
+	<aop:config>
+		<aop:pointcut id="allPointcut" expression="execution(* egoveframework.sample..*Impl.*(..))"/>
+		<aop:aspect ref="advice">
+		<aop:before pointcut-ref="allPointcut" method="advancedBeforeLogic"/>
+		</aop:aspect>
+	</aop:config> -->
+</beans>
