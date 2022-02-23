@@ -11,16 +11,22 @@
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
                            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
                            
-<!--      <bean id="exceptionTransfer" class="egovframework.rte.fdl.cmmn.aspect.ExceptionTransfer"></bean>
-
-
-	 <aop:config>
+	<!-- <bean id="exceptionTransfer" class="egovframework.rte.fdl.cmmn.aspect.ExceptionTransfer"></bean> -->
+	<bean id="advice" class="egoveframework.sample.common.AdvancedSampleAdvice"></bean>
+	
+	<aop:config>
+	 	<aop:pointcut id="allPointcut" expression="execution(* egoveframework.sample..impl.*Impl.*(..))"/>
+	 	<aop:aspect ref="advice">
+	 	<aop:before pointcut-ref="allPointcut" method="beforeLogic"/>
+	 	</aop:aspect>
+	</aop:config>
+<!-- 	 <aop:config>
 	 	<aop:pointcut id="exceptionPointcut" expression="execution(* egovframework.sample..impl.*Impl.*(..))"/>
 	 	
 	 	exceptionPointcut범위에 있는 method에서 예외가 발생되면  exceptionTransfer 클래스의 transfer 메소드가 실행된다.
 	 	<aop:aspect ref="exceptionTransfer">
 	 	<aop:after-throwing pointcut-ref="exceptionPointcut" method="transfer" throwing="exception"/>
 	 	</aop:aspect>
-	 </aop:config>
- -->
+	 </aop:config> -->
+
 </beans>
