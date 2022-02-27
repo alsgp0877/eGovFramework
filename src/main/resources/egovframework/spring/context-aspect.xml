@@ -17,7 +17,11 @@
 	<aop:config>
 	 	<aop:pointcut id="allPointcut" expression="execution(* egoveframework.sample..impl.*Impl.*(..))"/>
 	 	<aop:aspect ref="advice">
-	 	<aop:before pointcut-ref="allPointcut" method="beforeLogic"/>
+		 	<aop:before pointcut-ref="allPointcut" method="beforeLogic"/>
+		 	<!--aop:after pointcut-ref="allPointcut" method="afterLogic"/-->
+		 	<aop:after-returning pointcut-ref="allPointcut" method="afterLogic" returning="returnObj"/>
+		 	<aop:after-throwing pointcut-ref="allPointcut" method="afterThrowingLogic" throwing="exceptObj"/>
+		 	<aop:around pointcut-ref="allPointcut" method="aroundLogic"/>
 	 	</aop:aspect>
 	</aop:config>
 <!-- 	 <aop:config>
