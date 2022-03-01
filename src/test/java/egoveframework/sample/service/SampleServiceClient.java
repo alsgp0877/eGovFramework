@@ -19,7 +19,7 @@ public class SampleServiceClient {
 		SampleService sampleService = (SampleService)container.getBean("sampleService");
 		
 		SampleVO vo= new SampleVO();
-		vo.setTitle("날아간거 aop 작업을 위해 다시 만듬");
+		vo.setTitle("아이디 자동생성테스트");
 		vo.setRegUser("테스터");
 		vo.setContent("임시내용");
 		sampleService.insertSample(vo);

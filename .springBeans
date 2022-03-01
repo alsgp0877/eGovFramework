@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/main/resources/egovframework/spring/context-aspect.xml</config>
 		<config>src/main/resources/egovframework/spring/context-transaction.xml</config>
+		<config>src/main/resources/egovframework/spring/context-idgen.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

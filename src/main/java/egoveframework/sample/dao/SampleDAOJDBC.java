@@ -24,7 +24,7 @@ public class SampleDAOJDBC {
 	private ResultSet rs;
 
 	
-	private final String SAMPLE_INSERT = "INSERT INTO SAMPLE(ID,TITLE,REG_USER,CONTENT,REG_DATE) VALUES (?,?,?,?,SYSDATE)";
+	private final String SAMPLE_INSERT = "INSERT INTO SAMPLE(ID,TITLE,REG_USER,CONTENT,REG_DATE) VALUES ((SELECT NVL(MAX(ID),0)+1 FROM SAMPLE),?,?,?,SYSDATE)";
 	private final String SAMPLE_UPDATE = "UPDATE SAMPLE SET TITLE=?,REG_USER=?,CONTENT=? WHERE ID=?";
 	private final String SAMPLE_DELETE = "DELETE FROM SAMPLE WHERE ID=?";
 	private final String SAMPLE_GET = "SELECT ID,TITLE,REG_USER,CONTENT,REG_DATE FROM SAMPLE WHERE ID=?"; 
@@ -54,7 +54,7 @@ public class SampleDAOJDBC {
 		stmt.setString(1, vo.getTitle());
 		stmt.setString(2, vo.getRegUser());
 		stmt.setString(3, vo.getContent());
-		stmt.setInt(4, vo.getId());
+		stmt.setString(4, vo.getId());
 		stmt.executeUpdate();
 		JDBCUtil.close(stmt,conn);
 		
@@ -65,7 +65,7 @@ public class SampleDAOJDBC {
 		System.out.println("deleteSample 기능처리");
 		conn = JDBCUtil.getConnection();
 		stmt = conn.prepareStatement(SAMPLE_DELETE);
-		stmt.setInt(1, vo.getId());
+		stmt.setString(1, vo.getId());
 		stmt.executeUpdate();
 		JDBCUtil.close(stmt,conn);
 		
@@ -77,11 +77,11 @@ public class SampleDAOJDBC {
 		SampleVO vo1 = null;
 		conn = JDBCUtil.getConnection();
 		stmt = conn.prepareStatement(SAMPLE_GET);
-		stmt.setInt(1, vo1.getId());
+		stmt.setString(1, vo1.getId());
 		rs=stmt.executeQuery();
 		if(rs.next()) {
 			vo1 = new SampleVO();
-			vo1.setId(rs.getInt("ID"));
+			vo1.setId(rs.getString("ID"));
 			vo1.setTitle(rs.getString("TITLE"));
 			vo1.setRegUser(rs.getString("REG_USER"));
 			vo1.setContent(rs.getString("CONTENT"));
@@ -103,7 +103,7 @@ public class SampleDAOJDBC {
 		while(rs.next()) {
 			
 			SampleVO vo1 = new SampleVO();
-			vo1.setId(rs.getInt("ID"));
+			vo1.setId(rs.getString("ID"));
 			vo1.setTitle(rs.getString("TITLE"));
 			vo1.setRegUser(rs.getString("REG_USER"));
 			vo1.setContent(rs.getString("CONTENT"));

@@ -21,6 +21,7 @@
     	<property name="dataSource" ref="dataSource"></property>
     </bean>
 
+	<bean id="leaveaTrace" class="egovframework.rte.fdl.cmmn.trace.LeaveaTrace"></bean>
 
 
 </beans>
