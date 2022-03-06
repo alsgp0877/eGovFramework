@@ -17,7 +17,7 @@
 <title>SAMPLE 목록</title>
 </head>
 <body>
-<h1>Sapple 목록</h1>
+<h1>Sample 목록</h1>
 <table border="1" cellpadding="0" cellspacing="0" width="800">
 <tr>
 	<th bgcolor="orange" width="60">아이디</th>
