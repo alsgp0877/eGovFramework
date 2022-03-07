@@ -2,6 +2,24 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id ="HandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/selectSampleList.do">selectSampmleList</prop>
+				<prop key="/selectSample.do">selectSample</prop>
+				<prop key="/insertSample.do">insertSample</prop>
+				<prop key="/updateSample.do">insertSample</prop>
+				<prop key="/deleteSample.do">deleteSample</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- Controller -->
+	<bean id="selectSampleList" class="egoveframework.sample.web.SelectSampleListController"></bean>
+	<bean id="selectSample" class="egoveframework.sample.web.SelectSampleController"></bean>
+	<bean id="updateSample" class="egoveframework.sample.web.UpdateSampleController"></bean>
+	<bean id="deleteSample" class="egoveframework.sample.web.DeleteSampleController"></bean>
 
 
 </beans>

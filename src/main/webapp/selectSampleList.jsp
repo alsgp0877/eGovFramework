@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="egoveframework.sample.dao.SampleDAOJDBC"%>
+<%-- <%@ page import="egoveframework.sample.dao.SampleDAOJDBC"%>
 <%@ page import="egoveframework.sample.vo.SampleVO"%>
-<%@ page import="java.util.List"%>
+<%@ page import="java.util.List"%> --%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
-	//1.DB처리
-	SampleVO vo = new SampleVO();
-	SampleDAOJDBC dao = new SampleDAOJDBC();
-	List<SampleVO> sampleList = dao.selectSampleList(vo);
-	
-	//2.응답화면구성
+
+	/* List<SampleVO> sampleList = (List)session.getAttribute("sampleList"); */
+	/* List<SampleVO> sampleList = (List)request.getAttribute("sampleList"); */
+
 %>
 <!DOCTYPE html>
 <html>
@@ -26,14 +25,22 @@
 	<th bgcolor="orange" width="60">등록일</th>
 </tr>
 
-<%for(SampleVO sample : sampleList){ %>
+<%-- <%for(SampleVO sample : sampleList){ %> --%>
+<c:forEach var="sample" items="${sampleList}">
 <tr>
+<%-- 	
 	<td align="center"><a href="selectSample.jsp?id=<%=sample.getId() %>"><%=sample.getId() %></td>
-	<td align="center"><%=sample.getTitle() %></td>
+ 	<td align="center"><%=sample.getTitle() %></td>
 	<td align="center"><%=sample.getRegUser() %></td>
 	<td align="center"><%=sample.getRegDate() %></td>
+ --%>
+ 	<td align="center"><a href="selectSample.do?id=${sample.id}">${sample.id}</a></td>	
+ 	<td align="center">${sample.title}</td>
+	<td align="center">${sample.regUser}</td>
+	<td align="center">${sample.regDate}</td>
 </tr>
-<%} %>
+<%-- <%} %> --%>
+</c:forEach>
 </table>
 <br>
 <a href="insertSample.jsp">샘플 등록</a>

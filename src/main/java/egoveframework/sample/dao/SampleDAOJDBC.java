@@ -39,7 +39,7 @@ public class SampleDAOJDBC {
 		System.out.println("insertSample 기능처리");
 		conn = JDBCUtil.getConnection();
 		stmt = conn.prepareStatement(SAMPLE_INSERT);
-		stmt.setString(1, "SAMPLE-00007");
+		stmt.setString(1, "SAMPLE-00008");
 		stmt.setString(2, vo.getTitle());
 		stmt.setString(3, vo.getRegUser());
 		stmt.setString(4, vo.getContent());

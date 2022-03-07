@@ -8,7 +8,7 @@
 <body>
 <center>
 <h1>SAMPLE 상세</h1>
-<form action="insertSample_proc.jsp" method="post">
+<form action="insertSample.do" method="post">
 <table border="1" cellpadding="0" cellspacing="0">
 <tr>
 	<td bgcolor="orange">제목</td>
@@ -28,7 +28,7 @@
 </table>
 </form>
 <br>
-<a href="selectSampleList.jsp">LIST</a><br>
+<a href="selectSampleList.do">LIST</a><br>
 </center>
 </body>
 </html>
