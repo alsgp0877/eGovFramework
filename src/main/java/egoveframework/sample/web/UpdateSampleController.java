@@ -6,16 +6,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
 import egoveframework.sample.dao.SampleDAOJDBC;
 import egoveframework.sample.vo.SampleVO;
-
-public class UpdateSampleController implements Controller{
-	
-	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception{
+@Controller
+public class UpdateSampleController{
+	/*	
+	@RequestMapping(value="/updateSample.do")
+	public String updateSample(SampleVO vo,SampleDAOJDBC sampleDAO) throws Exception{
 		
 		System.out.println("샘플 등록 조회 처리");
 		
@@ -37,11 +38,11 @@ public class UpdateSampleController implements Controller{
 		
 		//3.화면네비게이션
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("selectSampleList.do");
-		return mav;
+		mav.setViewName("foward:selectSampleList.do");
+		return "foward:selectSampleList.do";
 		
 		
 	}
-
+*/
 
 }

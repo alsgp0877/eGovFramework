@@ -23,6 +23,7 @@ public class SampleDAOJDBC {
 	private PreparedStatement stmt;
 	private ResultSet rs;
 
+
 	
 	//private final String SAMPLE_INSERT = "INSERT INTO SAMPLE(ID,TITLE,REG_USER,CONTENT,REG_DATE) VALUES ((SELECT NVL(MAX(ID),0)+1 FROM SAMPLE),?,?,?,SYSDATE)";
 	private final String SAMPLE_INSERT = "INSERT INTO SAMPLE(ID,TITLE,REG_USER,CONTENT,REG_DATE) VALUES (?,?,?,?,SYSDATE)";

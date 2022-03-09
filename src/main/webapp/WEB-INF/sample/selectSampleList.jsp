@@ -17,6 +17,21 @@
 </head>
 <body>
 <h1>Sample 목록</h1>
+<form action="selectSampleList.do" method="post">
+<table border="1" cellpadding="0" cellspacing="0" width="800">
+<tr>
+	<td	align="right">
+		<select name="searchCondition">
+		<c:forEach items="${conditionMap}" var="option">
+			<option value="${option.value}">${option.key}
+		</c:forEach>
+		</select>
+		<input name="searchKeyword" type="text"/>
+		<input type="submit" value="검색"/>
+	</td>
+</tr>
+</table>
+</form>
 <table border="1" cellpadding="0" cellspacing="0" width="800">
 <tr>
 	<th bgcolor="orange" width="60">아이디</th>
@@ -43,6 +58,6 @@
 </c:forEach>
 </table>
 <br>
-<a href="insertSample.jsp">샘플 등록</a>
+<a href="insertSample.do">샘플 등록</a>
 </body>
 </html>
