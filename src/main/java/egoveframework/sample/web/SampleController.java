@@ -79,7 +79,9 @@ public class SampleController {
 	public String selectSampleList(SampleVO vo, Model model) throws Exception {
 
 		System.out.println("샘플 목록 검색 처리");
-
+		//Null check
+		if(vo.getSearchCondition() == null) vo.setSearchCondition("TITLE");
+		if(vo.getSearchKeyword() == null) vo.setSearchKeyword("");
 		model.addAttribute("sampleList", sampleService.selectSampleList(vo));
 		return "selectSampleList";
 

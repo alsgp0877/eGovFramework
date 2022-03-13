@@ -25,6 +25,10 @@ public class SampleDAOSpring {
 	private final String SAMPLE_GET = "SELECT ID,TITLE,REG_USER,CONTENT,REG_DATE FROM SAMPLE WHERE ID=?"; 
 	private final String SAMPLE_LIST = "SELECT ID,TITLE,REG_USER,CONTENT,REG_DATE FROM SAMPLE ORDER BY REG_DATE DESC"; 
 	
+	private final String SAMPLE_LIST_TITLE = "SELECT ID,TITLE,REG_USER,CONTENT,REG_DATE FROM SAMPLE WHERE TITLE LIKE '%'||?||'%' ORDER BY REG_DATE DESC";
+	private final String SAMPLE_LIST_CONTENT = "SELECT ID,TITLE,REG_USER,CONTENT,REG_DATE FROM SAMPLE WHERE CONTENT LIKE '%'||?||'%' ORDER BY REG_DATE DESC";
+	
+	
 	public SampleDAOSpring() {
 		System.out.println("SampleDAOSpring 기능처리");
 	}
@@ -63,7 +67,14 @@ public class SampleDAOSpring {
 	public List<SampleVO> selectSampleList(SampleVO vo) throws Exception{
 		
 		System.out.println("selectSampleList 기능처리");
-		return spring.query(SAMPLE_LIST,new SampleRowMapper());
+		Object[] args = {vo.getSearchKeyword()};
+		if(vo.getSearchCondition().equals("TITLE")) {
+			return spring.query(SAMPLE_LIST_TITLE,args,new SampleRowMapper());
+		}else if(vo.getSearchCondition().equals("CONTENT")) {
+			return spring.query(SAMPLE_LIST_CONTENT,args,new SampleRowMapper());
+		}
+		
+		return null;
 		
 	}
 	

@@ -11,6 +11,7 @@
 		<config>src/main/resources/egovframework/spring/context-transaction.xml</config>
 		<config>src/main/resources/egovframework/spring/context-idgen.xml</config>
 		<config>src/main/webapp/WEB-INF/config/dispatcher-servlet.xml</config>
+		<config>src/main/resources/egovframework/spring/context-sqlMap.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
