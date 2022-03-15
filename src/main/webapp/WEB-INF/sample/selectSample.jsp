@@ -37,7 +37,7 @@
 </tr>
 <tr>
 	<td bgcolor="orange" width="70">작성자</td>
-	<td align="left"><input name="regUser" type="text" value="${sample.regUser}"/></td>
+	<td align="left"><input name="regUser" type="text" value="${sample.reg_user}"/></td>
 </tr>
 <tr>
 	<td bgcolor="orange" width="70">내용</td>
@@ -45,7 +45,7 @@
 </tr>
 <tr>
 	<td bgcolor="orange" width="70">등록일</td>
-	<td align="left"><${sample.regDate}</td>
+	<td align="left"><${sample.reg_date}</td>
 </tr>
 <tr>
 	<td colspan="2" align="center"><input type="submit" value="UPDATE"/></td>

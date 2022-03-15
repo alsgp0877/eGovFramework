@@ -60,8 +60,8 @@
  --%>
  	<td align="center"><a href="selectSample.do?id=${sample.id}">${sample.id}</a></td>	
  	<td align="center">${sample.title}</td>
-	<td align="center">${sample.regUser}</td>
-	<td align="center">${sample.regDate}</td>
+	<td align="center">${sample.reg_user}</td>
+	<td align="center">${sample.reg_date}</td>
 </tr>
 <%-- <%} %> --%>
 </c:forEach>

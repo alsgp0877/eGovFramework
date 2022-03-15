@@ -6,10 +6,10 @@ public class SampleVO {
 	
 	private String id;
 	private String title;
-	private String regUser;
+	private String reg_user;
 	private String content;
 	
-	private Date regDate;
+	private Date reg_date;
 	
 	private String searchCondition;
 	private String searchKeyword;
@@ -42,13 +42,6 @@ public class SampleVO {
 		System.out.println("SampleVO(title):"+title);
 		this.title = title;
 	}
-	public String getRegUser() {
-		return regUser;
-	}
-	public void setRegUser(String regUser) {
-		System.out.println("SampleVO(regUser):"+regUser);
-		this.regUser = regUser;
-	}
 	public String getContent() {
 		return content;
 	}
@@ -56,17 +49,23 @@ public class SampleVO {
 		System.out.println("SampleVO(content):"+content);
 		this.content = content;
 	}
-	public Date getRegDate() {
-		return regDate;
+
+	public String getReg_user() {
+		return reg_user;
 	}
-	public void setRegDate(Date regDate) {
-		System.out.println("SampleVO(regDate):"+regDate);
-		this.regDate = regDate;
+	public void setReg_user(String reg_user) {
+		this.reg_user = reg_user;
+	}
+	public Date getReg_date() {
+		return reg_date;
+	}
+	public void setReg_date(Date reg_date) {
+		this.reg_date = reg_date;
 	}
 	@Override
 	public String toString() {
-		return "SampleVO [id=" + id + ", title=" + title + ", regUser=" + regUser + ", content=" + content
-				+ ", regDate=" + regDate + "]";
+		return "SampleVO [id=" + id + ", title=" + title + ", reg_user=" + reg_user + ", content=" + content
+				+ ", reg_date=" + reg_date + "]";
 	}
 
 	

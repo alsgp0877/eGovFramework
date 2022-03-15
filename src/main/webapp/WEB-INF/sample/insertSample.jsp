@@ -16,7 +16,7 @@
 </tr>
 <tr>
 	<td bgcolor="orange">작성자</td>
-	<td align="left"><input name="regUser" type="text" size="10" value="${sampleVO.regUser}"/></td>
+	<td align="left"><input name="regUser" type="text" size="10" value="${sampleVO.reg_user}"/></td>
 </tr>
 <tr>
 	<td bgcolor="orange">내용</td>

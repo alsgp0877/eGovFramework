@@ -32,7 +32,7 @@ public class SampleController {
 
 		System.out.println("등록 화면으로 이동");
 		vo.setTitle("sample등록입니다.");
-		vo.setRegUser("테스터");
+		vo.setReg_user("테스터");
 		vo.setContent("sample등록테스트중입니다");
 		return "insertSample";
 
@@ -62,6 +62,7 @@ public class SampleController {
 
 		System.out.println("샘플 상세 조회 처리");
 		model.addAttribute("sample", sampleService.selectSample(vo));
+		System.out.println("왜널인가요" + vo);
 		return "selectSample";
 
 	}

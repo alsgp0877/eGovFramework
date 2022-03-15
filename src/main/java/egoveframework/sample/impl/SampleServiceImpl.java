@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import egoveframework.sample.dao.SampleDAOIBatis;
 import egoveframework.sample.dao.SampleDAOJDBC;
 import egoveframework.sample.dao.SampleDAOSpring;
 import egoveframework.sample.service.SampleService;
@@ -21,8 +22,11 @@ public class SampleServiceImpl extends EgovAbstractServiceImpl implements Sample
 /*	@Resource(name="daoJDBC")
 	private SampleDAOJDBC sampleDAO;*/
 	
-	@Resource(name="daoSpring")
-	private SampleDAOSpring sampleDAO;
+/*	@Resource(name="daoSpring")
+	private SampleDAOSpring sampleDAO;*/
+	
+	@Resource(name="daoIBatis")
+	private SampleDAOIBatis sampleDAO;
 	
 	@Resource(name="egovIdGnrService")
 	private EgovIdGnrService egovIdGnrService;
