@@ -45,32 +45,41 @@
 	WHERE ID=#id#
 	
 	</select>
-	
+<!-- 	
 	<select id="SampleDAO.selectSampleList" resultMap="sampleResult">
 	
 	SELECT ID,TITLE,REG_USER,CONTENT,REG_DATE 
 	FROM SAMPLE 
 	ORDER BY ID DESC
 	
-	</select>
+	</select> -->
 	
-	<select id="SampleDAO.selectSampleList_TITLE" resultMap="sampleResult">
+	<select id="SampleDAO.selectSampleList" resultMap="sampleResult">
 	
 	SELECT ID,TITLE,REG_USER,CONTENT,REG_DATE 
 	FROM SAMPLE 
-	WHERE TITLE LIKE '%'||#searchKeyword#||'%'
+	WHERE 1=1
+	<isEqual prepend="AND" property="searchCondition" compareValue="TITLE">
+		TITLE LIKE '%'||#searchKeyword#||'%'
+	</isEqual>
+	<isEqual prepend="AND" property="searchCondition" compareValue="CONTENT">
+		CONTENT LIKE '%'||#searchKeyword#||'%'
+	</isEqual>
 	ORDER BY ID DESC
 	
 	</select>
 	
-	<select id="SampleDAO.selectSampleList_CONTENT" resultMap="sampleResult">
+<!-- 	<select id="SampleDAO.selectSampleList_CONTENT" resultMap="sampleResult">
 	
 	SELECT ID,TITLE,REG_USER,CONTENT,REG_DATE 
 	FROM SAMPLE 
-	WHERE TITLE LIKE '%'||#searchKeyword#||'%'
+	WHERE 1=1
+	<isEqual prepend="AND" property="searchCondition" compareValue="CONTENT">
+		CONTENT LIKE '%'||#searchKeyword#||'%'
+	</isEqual>
 	ORDER BY ID DESC
 	
-	</select>
+	</select> -->
 	
 </sqlMap>
 	

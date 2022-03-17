@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import egoveframework.sample.dao.SampleDAOIBatis;
 import egoveframework.sample.dao.SampleDAOJDBC;
+import egoveframework.sample.dao.SampleDAOMyBatis;
 import egoveframework.sample.dao.SampleDAOSpring;
 import egoveframework.sample.service.SampleService;
 import egoveframework.sample.vo.SampleVO;
@@ -25,8 +26,11 @@ public class SampleServiceImpl extends EgovAbstractServiceImpl implements Sample
 /*	@Resource(name="daoSpring")
 	private SampleDAOSpring sampleDAO;*/
 	
-	@Resource(name="daoIBatis")
-	private SampleDAOIBatis sampleDAO;
+/*	@Resource(name="daoIBatis")
+	private SampleDAOIBatis sampleDAO;*/
+	
+	@Resource(name="daoMyBatis")
+	private SampleDAOMyBatis sampleDAO;
 	
 	@Resource(name="egovIdGnrService")
 	private EgovIdGnrService egovIdGnrService;
