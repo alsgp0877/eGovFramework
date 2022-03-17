@@ -54,5 +54,23 @@
 	
 	</select>
 	
+	<select id="SampleDAO.selectSampleList_TITLE" resultMap="sampleResult">
+	
+	SELECT ID,TITLE,REG_USER,CONTENT,REG_DATE 
+	FROM SAMPLE 
+	WHERE TITLE LIKE '%'||#searchKeyword#||'%'
+	ORDER BY ID DESC
+	
+	</select>
+	
+	<select id="SampleDAO.selectSampleList_CONTENT" resultMap="sampleResult">
+	
+	SELECT ID,TITLE,REG_USER,CONTENT,REG_DATE 
+	FROM SAMPLE 
+	WHERE TITLE LIKE '%'||#searchKeyword#||'%'
+	ORDER BY ID DESC
+	
+	</select>
+	
 </sqlMap>
 	

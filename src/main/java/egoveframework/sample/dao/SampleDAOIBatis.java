@@ -46,11 +46,16 @@ public class SampleDAOIBatis extends EgovAbstractDAO implements SampleDAO{
 		
 		System.out.println("selectSample 기능처리");
 		return (List<SampleVO>)list("SampleDAO.selectSampleList",vo);
+
+/*		if(vo.getSearchCondition().equals("TITLE")) {
+			return (List<SampleVO>)list("SampleDAO.selectSampleList_TITLE",vo);
+		}else if(vo.getSearchCondition().equals("CONTENT")){
+			return (List<SampleVO>)list("SampleDAO.selectSampleList_CONTENT",vo);
+		}
 		
+		return null;
+*/		
 	}
-	
-	
-	
 	
 
 }
