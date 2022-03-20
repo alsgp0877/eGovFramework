@@ -35,7 +35,7 @@ public class SampleDAOSpring {
 	public void insertSample(SampleVO vo) throws Exception{
 	
 		System.out.println("insertSample 기능처리");
-		Object[] args = {vo.getId(), vo.getTitle(),vo.getRegUser(), vo.getContent()};
+		Object[] args = {vo.getId(), vo.getTitle(),vo.getReg_user(), vo.getContent()};
 		spring.update(SAMPLE_INSERT,args);
 		
 	}
@@ -43,7 +43,7 @@ public class SampleDAOSpring {
 	public void updateSample(SampleVO vo) throws Exception{
 		
 		System.out.println("updateSample 기능처리");
-		Object[] args = {vo.getTitle(),vo.getRegUser(), vo.getContent(),vo.getId()};
+		Object[] args = {vo.getTitle(),vo.getReg_user(), vo.getContent(),vo.getId()};
 		spring.update(SAMPLE_UPDATE,args);
 		
 	}

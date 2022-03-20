@@ -3,6 +3,6 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias alias="sample" type="egoveframework.sample.vo.SampleVO"
+		<typeAlias alias="sample" type="egoveframework.sample.vo.SampleVO"/>
 	</typeAliases>
 </configuration>

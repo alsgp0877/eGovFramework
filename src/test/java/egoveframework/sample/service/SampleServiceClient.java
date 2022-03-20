@@ -20,7 +20,7 @@ public class SampleServiceClient {
 		
 		SampleVO vo= new SampleVO();
 		vo.setTitle("아이디 자동생성테스트");
-		vo.setRegUser("테스터");
+		vo.setReg_user("테스터");
 		vo.setContent("임시내용");
 		sampleService.insertSample(vo);
 		

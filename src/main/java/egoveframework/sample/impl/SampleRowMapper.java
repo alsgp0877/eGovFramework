@@ -13,9 +13,9 @@ public class SampleRowMapper implements RowMapper<SampleVO>{
 		SampleVO vo1 = new SampleVO();
 		vo1.setId(rs.getString("ID"));
 		vo1.setTitle(rs.getString("TITLE"));
-		vo1.setRegUser(rs.getString("REG_USER"));
+		vo1.setReg_user(rs.getString("REG_USER"));
 		vo1.setContent(rs.getString("CONTENT"));
-		vo1.setRegDate(rs.getDate("REG_DATE"));
+		vo1.setReg_date(rs.getDate("REG_DATE"));
 		return vo1;
 		
 	}

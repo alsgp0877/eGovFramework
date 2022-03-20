@@ -45,7 +45,7 @@ public class SampleDAOJDBC {
 		stmt = conn.prepareStatement(SAMPLE_INSERT);
 		stmt.setString(1, "SAMPLE-00008");
 		stmt.setString(2, vo.getTitle());
-		stmt.setString(3, vo.getRegUser());
+		stmt.setString(3, vo.getReg_user());
 		stmt.setString(4, vo.getContent());
 		stmt.executeUpdate();
 		JDBCUtil.close(stmt,conn);
@@ -58,7 +58,7 @@ public class SampleDAOJDBC {
 		conn = JDBCUtil.getConnection();
 		stmt = conn.prepareStatement(SAMPLE_UPDATE);
 		stmt.setString(1, vo.getTitle());
-		stmt.setString(2, vo.getRegUser());
+		stmt.setString(2, vo.getReg_user());
 		stmt.setString(3, vo.getContent());
 		stmt.setString(4, vo.getId());
 		stmt.executeUpdate();
@@ -89,9 +89,9 @@ public class SampleDAOJDBC {
 			vo1 = new SampleVO();
 			vo1.setId(rs.getString("ID"));
 			vo1.setTitle(rs.getString("TITLE"));
-			vo1.setRegUser(rs.getString("REG_USER"));
+			vo1.setReg_user(rs.getString("REG_USER"));
 			vo1.setContent(rs.getString("CONTENT"));
-			vo1.setRegDate(rs.getDate("REG_DATE"));
+			vo1.setReg_date(rs.getDate("REG_DATE"));
 			
 		}
 		JDBCUtil.close(rs,stmt,conn);
@@ -116,9 +116,9 @@ public class SampleDAOJDBC {
 			SampleVO sample = new SampleVO();
 			sample.setId(rs.getString("ID"));
 			sample.setTitle(rs.getString("TITLE"));
-			sample.setRegUser(rs.getString("REG_USER"));
+			sample.setReg_user(rs.getString("REG_USER"));
 			sample.setContent(rs.getString("CONTENT"));
-			sample.setRegDate(rs.getDate("REG_DATE"));
+			sample.setReg_date(rs.getDate("REG_DATE"));
 			sampleList.add(sample);
 		}
 
